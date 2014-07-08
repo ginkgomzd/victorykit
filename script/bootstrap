@@ -18,7 +18,7 @@ def confirm lib_name, required_version, version_placement=2
 end
 
 confirm "ruby", ">= 2.0.0"
-confirm "redis-cli", ">= 2.4.11"
+confirm "redis-cli", ">= 2.2.11"
 
 if confirm "psql", ">= 9.2.0", 3
   if `echo "select 1" | psql -At postgres`.strip == "1"
