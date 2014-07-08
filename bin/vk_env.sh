@@ -5,7 +5,7 @@
 #
 
 # Needed by Unicorn/Monit.
-HOME="/home/admin"; export HOME
+HOME="${topdir}"; export HOME
 
 LANG="en_US.UTF-8"; export LANG
 LC_ALL="en_US.UTF-8"; export LC_ALL
