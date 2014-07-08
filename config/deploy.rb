@@ -16,6 +16,8 @@ load 'deploy/assets'
 
 set :application, "vk"
 
+set :keys_master_file, "/home/victorykit/keys_and_settings.sh"
+
 set :use_sudo, false
 default_run_options[:pty] = true
 
@@ -64,6 +66,13 @@ namespace :symlinks do
   after "deploy:finalize_update", "symlinks:set_links"
 end
 
+namespace :keys_and_settings do
+  desc "Ensure that the keys and settings file is in the shared dir."
+  task :ensure_file do
+    run "if [ ! -f #{shared_path}/config/keys_and_settings.sh && -f #{keys_master_file} ]; cp #{keys_master_file} #{shared_path}/config/keys_and_settings.sh; fi"
+  end
+  after "deploy:finalize_update", "keys_and_settings:ensure_file"
+end
 
 set :rails_env, "production"
 set :unicorn_binary, "#{shared_path}/bundle/ruby/2.0.0/bin/unicorn"
