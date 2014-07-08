@@ -23,17 +23,18 @@ set :keep_releases, 10
 after "deploy:update", "deploy:cleanup"
 
 # Repo info
-set :repository, "git@github.com:victorykit/victorykit.git"
+set :repository, "git@github.com:ginkgomzd/victorykit.git"
 set :scm, "git"
 ssh_options[:forward_agent] = true
-set :branch, "root_strikers"
+set :branch, "demand_progress"
 set :deploy_via, :remote_cache
+set :copy_exclude, [ '.git' ]
 
 # Deploy target info
-set :deploy_to, "/home/admin/vk"
-role :web, "vk.rootstrikers.org"
-role :app, "vk.rootstrikers.org"
-role :db,  "vk.rootstrikers.org", :primary => true
+set :deploy_to, "/home/victorykit/vk"
+role :web, "flask.ginkgostreet.com"
+role :app, "flask.ginkgostreet.com"
+role :db,  "flask.ginkgostreet.com", :primary => true
 
 # Sidekiq
 set(:sidekiq_cmd) { "#{current_path}/bin/vk_run.sh sidekiq" }

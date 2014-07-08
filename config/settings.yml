@@ -8,8 +8,8 @@ hasher:
 google_analytics:
   analytics_id: UA-31572927-1
 email:
-  from_address: Szelena Gray <info@rootstriker.org>
-  domain: rootstrikers.org
+  from_address: Do Not Reply <admin@demandprogress.org>
+  domain: demandprogress.org
 action_kit:
    host: <%= ENV["AK_IMPORT_DB_HOST"] %>
    username: <%= ENV["AK_IMPORT_DB_UNAME"] %>
@@ -18,13 +18,13 @@ action_kit:
 cloudmailin:
   token: <%= ENV["CLOUDMAILIN_TOKEN"] %>
 organization:
-  name: "Rootstrikers"
-  email: "info@rootstrikers.org"
-  unsubscribe_url: "https://act.demandprogress.org/unsubscribe/unsubscribe?source=watchdog"
+  name: "Demand Progress"
+  email: "info@demandprogress.org"
+  unsubscribe_url: "https://act.demandprogress.org/unsubscribe/unsubscribe?source=victorykit"
   logo: 'logo.png'
 site:
-  name: "Rootstrikers.org"
-  email: "support@rootstrikers.org"
-  hostname: "act.rootstrikers.org"
-  feedback_email: info+watchdog@demandprogress.org
-  list_unsubscribe: "unsubscribe@appmail.rootstrikers.org"
+  name: "DemandProgress.org"
+  email: "support@demandprogress.org"
+  hostname: "act.demandprogress.org"
+  feedback_email: info+victorykit@demandprogress.org
+  list_unsubscribe: "unsubscribe@appmail.demandprogress.org"
