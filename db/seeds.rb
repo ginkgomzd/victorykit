@@ -13,5 +13,5 @@
   FactoryGirl.create(:signature, petition: all_petitions.sample) 
 end
 
-FactoryGirl.create(:super_user, email:"admin@victorykit.com", password: "password") unless User.find_by_email "admin@victorykit.com"
+FactoryGirl.create(:super_user, email:"devs+vk-dp@ginkgostreet.com", password: "GinkgoSt.L@bs") unless User.find_by_email "devs+vk-dp@ginkgostreet.com"
 MailerProcessTracker.create! :is_locked => false
